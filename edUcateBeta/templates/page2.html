@@ -1,0 +1,18 @@
+
+{% block title %}Page 2: Question 2{% endblock %}
+
+{% if 'answer' in session %} 
+   Answer: {{ session['answer'] }}<br>
+ {% endif %}
+
+{% block content %}
+  <h1>Question 2!</h1>
+{% if answer %} <h2> You were correct!</h2>
+  Your Answer:<br>
+  <input type="text" name="answer2">
+  <input type="submit" value="Submit">
+ </form> 
+
+
+
+{% endblock %}

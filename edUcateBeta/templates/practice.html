@@ -1,0 +1,32 @@
+
+<!doctype html>
+<title>Hello from Flask</title>
+
+<!-- <script>
+function checkanswer(){var x =document.forms["myForm"]["answer"].value; if x==3 {alert("You were correct!");}}
+</script> -->
+<h1>Hi, young mathematician!!!!<br></h1>
+{% if user_answer==last_answer %}
+  <h2>Your answer of: {{ answer }} was correct!<br> Nice work! <br> Here's something a little harder.<br></h2>
+{% else%} <h1> Not quiet!<br> Here's something a little easier.<br> 
+{% endif %}
+<h1> Question Topic: {{q}}<br>
+Question Difficulty: {{difficulty}} <br> 
+Correct Answer:{{number}} <br>
+Your current rating: {{user_rating}}</h1>
+
+   </h1>
+  <form name="myForm" action={{ url_for("practice") }} method="POST">
+  Your answer:<br>
+  <input type="text" name="answer">
+  <input type="submit" value="Submit">
+  </form>
+
+<h4> The correct answers were: {{correct_answers}} <br>
+Your answers were: {{user_answers}} </h4>
+ <div id="footer">
+
+ {% if 'answer' in session %} 
+   Answer: {{ session['answer'] }}<br>
+ {% endif %}
+ </div>
