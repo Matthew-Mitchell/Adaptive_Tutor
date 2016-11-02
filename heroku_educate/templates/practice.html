@@ -1,0 +1,70 @@
+
+<!doctype html>
+<title>Hello from Flask</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+<style>
+h1 {text-align:center;}
+h3 {text-align:center;}
+form {text-align:center;}
+p {text-align:center;}
+body {
+    background-color: #D5DBDB;
+}
+</style>
+<!-- <script>
+function checkanswer(){var x =document.forms["myForm"]["answer"].value; if x==3 {alert("You were correct!");}}
+</script> -->
+<h2 align="left"> edUcate BETA </h2>
+<h1>Hi, Alex! <br>
+<!-- Your Rating: {{user_rating}} --></h1>
+{% if user_answer==last_answer %}
+  <h3>Nice work! Your answer of: $${{ user_answer }}$$ was correct!<br> Here's something a little harder.<br></h3>
+{% else%} <h3> Not quite...the correct answer was: $${{last_answer}}$$<br> Here's something a little easier.<br> 
+{% endif %}
+<h3> <br> 
+
+{% if user_rating < 3 %}
+<h3> Simplify. </h3>
+{% endif %}
+
+{% if user_rating==3 %}
+<h3> Find the slope between </h3>
+{% endif %}
+
+{% if user_rating==4 %}
+<h3> Find the slope between </h3>
+{% endif %}
+
+{% if user_rating>4 %}
+<h3> Find the vertex of the parabola. Write your answer in the form (x,y). </h3>
+{% endif %}
+
+
+$${{q}}$$<br>
+<!-- Question Difficulty: {{difficulty}} <br> 
+Correct Answer:{{number}} <br>
+Your current rating: {{user_rating}}</h1> -->
+
+   </h3>
+  <form name="myForm" action={{ url_for("practice") }} method="POST">
+  Your answer:<br>
+  <input type="text" name="answer">
+  <input type="submit" value="Submit">
+  </form>
+
+<!-- <h4> The correct answers were: {{correct_answers}} <br>
+Your answers were: {{user_answers}} </h4>
+ <div id="footer">
+
+ {% if 'answer' in session %} 
+   Answer: {{ session['answer'] }}<br>
+ {% endif %}
+ </div> -->

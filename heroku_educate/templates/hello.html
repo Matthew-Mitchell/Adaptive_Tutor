@@ -1,0 +1,45 @@
+
+<!doctype html>
+<title>Hello from Flask</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<style>
+h3 {text-align:center;}
+h1 {text-align:center;}
+form {text-align:center;}
+p {text-align:center;}
+body {
+    background-color: #D5DBDB;
+}
+
+</style>
+<!-- <script>
+function checkanswer(){var x =document.forms["myForm"]["answer"].value; if x==3 {alert("You were correct!");}}
+</script> -->
+<h2 align="left"> edUcate BETA </h2>
+<h1>Hi, Alex! <br><br> Ready? Let's go!</h1>
+
+<h1> Find the slope between: <br><br> $${{q}}$$<br>
+<!-- Question Difficulty: {{difficulty}} <br> 
+ -->Enter your answer as a fraction.
+   </h1>
+  <form name="myForm" action={{ url_for("practice") }} method="POST">
+  Your answer:<br>
+  <input type="text" name="answer">
+  <input type="submit" value="Submit">
+  </form>
+
+<<!-- h4> The correct answers were: {{correct_answers}} <br>
+Your answers were: {{user_answers}} </h4>
+ <div id="footer">
+
+ {% if 'answer' in session %} 
+   Answer: {{ session['answer'] }}<br>
+ {% endif %}
+ </div> -->
